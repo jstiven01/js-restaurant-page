@@ -1,0 +1,8 @@
+.img-background {
+    background-image: url(https://girlandthegoat.com/wp-content/themes/wordpress-bootstrap-master/images/background_home.jpg);
+    height: 100vh;
+    width: 100%;
+    text-align: center;;
+    color: aliceblue;
+    position: absolute;
+}
