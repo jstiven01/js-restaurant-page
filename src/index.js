@@ -1,0 +1,1 @@
+console.log("Welcome! Greetings from index.js. Let's learn Webpack2");
