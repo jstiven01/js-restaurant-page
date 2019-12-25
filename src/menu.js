@@ -6,7 +6,7 @@ const menu = () => {
             <div class="row">
                 <div class="col-12 subnav"></div>
                 <h1 class="col-12 my-4">MENU</h1>
-                <div class="col-12 menu-items">
+                <div class="col-12 background-content ">
                     <h3 class="mt-4  text-success">Veggies</h3>
                     <ul>
                         <li>

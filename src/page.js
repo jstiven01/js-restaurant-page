@@ -1,11 +1,12 @@
 import menu from './menu'
+import contact from './contact'
+
 const Page = ( () => {
 
     const makeElementChild = (parentElement, TypeElement, textHtml, classCss = '') => {
         const element = document.createElement(TypeElement);
         if (classCss !== ''){
             element.setAttribute('class', classCss);
-            //element.classList.add(classCss);
         }
         element.innerHTML = textHtml;
         parentElement.appendChild(element);
@@ -27,9 +28,18 @@ const Page = ( () => {
         const [menuContent, menuClasses] = menu();
         makeElementChild(parentElement, 'div', menuContent, menuClasses);
         return document.body.appendChild(parentElement);
-    }
+    };
+
+    const renderContactPage = () => {
+        const parentElement = document.querySelector('#content');
+        parentElement.innerHTML = '';
+        const [contactContent, contactClasses] = contact();
+        makeElementChild(parentElement, 'div', contactContent, contactClasses);
+        return document.body.appendChild(parentElement);
+    };
+
     return {
-        renderHomePage, renderMenuPage
+        renderHomePage, renderMenuPage, renderContactPage
     }
 }
 )();
