@@ -1,5 +1,13 @@
+import './style.css';
 import Page from './page'
-import contact from './contact'
-console.log("Welcome! Greetings from index.js. Let's learn Webpack2");
-Page.renderPage();
-contact.renderTab();
+import nav from './navbar'
+
+Page.renderHomePage();
+document.body.appendChild(nav());
+
+const homeTab = document.querySelector('#home');
+const menuTab = document.querySelector('#menu');
+
+homeTab.addEventListener('click', Page.renderHomePage);
+menuTab.addEventListener('click', Page.renderMenuPage);
+

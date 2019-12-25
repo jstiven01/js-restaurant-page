@@ -1,7 +1,4 @@
-import './style.css';
-import nav from './navbar';
-
-
+import menu from './menu'
 const Page = ( () => {
 
     const makeElementChild = (parentElement, TypeElement, textHtml, classCss = '') => {
@@ -15,18 +12,24 @@ const Page = ( () => {
         return element;
 
     };
-    const renderPage = ()=>{
+
+    const renderHomePage = ()=> {
         const parentElement = document.querySelector('#content');
-        const divElement = makeElementChild(parentElement, 'div','','img-background');
+        const divElement = makeElementChild(parentElement, 'div','','img-background-home');
         makeElementChild(divElement,'h1','WebPack Restaurant');
         makeElementChild(divElement,'h3','Let Webpack Restaurant cater your next private event!');
-        console.log("hello page.js");
-        const [navContent, classesNav] = nav();
-        makeElementChild(parentElement, 'nav', navContent, classesNav);
         return document.body.appendChild(parentElement);
     };
+
+    const renderMenuPage = () => {
+        const parentElement = document.querySelector('#content');
+        parentElement.innerHTML = '';
+        const [menuContent, menuClasses] = menu();
+        makeElementChild(parentElement, 'div', menuContent, menuClasses);
+        return document.body.appendChild(parentElement);
+    }
     return {
-        renderPage
+        renderHomePage, renderMenuPage
     }
 }
 )();
