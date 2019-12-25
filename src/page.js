@@ -1,5 +1,6 @@
 import menu from './menu'
 import contact from './contact'
+import home from './home'
 
 const Page = ( () => {
 
@@ -16,9 +17,9 @@ const Page = ( () => {
 
     const renderHomePage = ()=> {
         const parentElement = document.querySelector('#content');
-        const divElement = makeElementChild(parentElement, 'div','','img-background-home');
-        makeElementChild(divElement,'h1','WebPack Restaurant');
-        makeElementChild(divElement,'h3','Let Webpack Restaurant cater your next private event!');
+        parentElement.innerHTML = '';
+        const [homeContent, homeClasses] =home();
+        makeElementChild(parentElement, 'div', homeContent, homeClasses);
         return document.body.appendChild(parentElement);
     };
 
