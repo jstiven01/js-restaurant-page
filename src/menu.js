@@ -1,7 +1,7 @@
 const menu = () => {
-    const menuClasses = 'img-background-menu';
-  
-    const menuContent = `
+  const menuClasses = 'img-background-menu';
+
+  const menuContent = `
         <div class="container">
             <div class="row">
                 <div class="col-12 subnav"></div>
@@ -38,8 +38,8 @@ const menu = () => {
             </div>
         </div>
       `;
-  
-    return [menuContent, menuClasses]
-  };
-  
+
+  return [menuContent, menuClasses];
+};
+
 export default menu;

@@ -1,8 +1,8 @@
 const nav = () => {
-    const element = document.createElement('nav');
-    const navClasses = 'navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom navbar-custom-color';
-  
-    const navContent = `
+  const element = document.createElement('nav');
+  const navClasses = 'navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom navbar-custom-color';
+
+  const navContent = `
         <div class="d-flex w-50 order-0">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -23,12 +23,11 @@ const nav = () => {
         </div>
         <span class="text-truncate mt-1 w-50 text-right order-1 order-md-last"></span>
       `;
-      
 
-    element.setAttribute('class', navClasses);
-    element.innerHTML = navContent;
-    return element
-  
-  };
-  
+
+  element.setAttribute('class', navClasses);
+  element.innerHTML = navContent;
+  return element;
+};
+
 export default nav;

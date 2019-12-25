@@ -1,7 +1,7 @@
 const contact = () => {
-    const contactClasses = 'img-background-contact';
-  
-    const contactContent = `
+  const contactClasses = 'img-background-contact';
+
+  const contactContent = `
         <div class="container">
             <div class="row">
                 <div class="col-12 subnav"></div>
@@ -26,8 +26,8 @@ const contact = () => {
             </div>
         </div>
       `;
-  
-    return [contactContent, contactClasses]
-  };
-  
+
+  return [contactContent, contactClasses];
+};
+
 export default contact;

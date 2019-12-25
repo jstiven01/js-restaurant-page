@@ -1,7 +1,7 @@
 const home = () => {
-    const homeClasses = 'img-background-home';
-  
-    const homeContent = `
+  const homeClasses = 'img-background-home';
+
+  const homeContent = `
         <div class="container">
             <div class="row">
                 <div class="col-12 subnav"></div>
@@ -14,8 +14,8 @@ const home = () => {
             </div>
         </div>
       `;
-  
-    return [homeContent, homeClasses]
-  };
-  
+
+  return [homeContent, homeClasses];
+};
+
 export default home;
