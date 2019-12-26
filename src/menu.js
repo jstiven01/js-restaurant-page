@@ -15,7 +15,7 @@ const menu = () => {
 
   const h1Menu = document.createElement('h1');
   h1Menu.setAttribute('class', 'col-12 my-4');
-  h1Menu.innerHTML = 'Menu';
+  h1Menu.innerHTML = 'MENU';
   rowChildren.push(h1Menu);
 
   const divContent = document.createElement('div');

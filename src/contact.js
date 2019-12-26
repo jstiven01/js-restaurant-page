@@ -1,33 +1,77 @@
 const contact = () => {
-  const contactClasses = 'img-background-contact';
+  const parentElement = document.createElement('div');
+  parentElement.setAttribute('class', 'img-background-contact');
 
-  const contactContent = `
-        <div class="container">
-            <div class="row">
-                <div class="col-12 subnav"></div>
-                <h1 class="col-12 my-4">CONTACT</h1>
-                <div class="col-12 background-content">
-                    <form class="form">
-                        <div class="form-group">
-                            <label for="name"><h4 class="my-3">Your Name</h4></label>
-                            <input type="text" id="name" class="form-control" placeholder="Enter your name">
-                        </div>
-                        <div class="form-group">
-                            <label for="email"><h4 class="my-3">Your Email</h4></label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
-                        </div>
-                        <div class="form-group">
-                            <label for="message"><h4 class="my-3">Your Message</h4></label>
-                            <textarea class="form-control" id="message" rows="3"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-light my-4">Send</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-      `;
+  const divContainer = document.createElement('div');
+  divContainer.setAttribute('class', 'container');
 
-  return [contactContent, contactClasses];
+  const divRow = document.createElement('div');
+  divRow.setAttribute('class', 'row');
+  const rowChildren = [];
+
+  const divSubNav = document.createElement('div');
+  divSubNav.setAttribute('class', 'col-12 subnav');
+  rowChildren.push(divSubNav);
+
+  const h1Contact = document.createElement('h1');
+  h1Contact.setAttribute('class', 'col-12 my-4');
+  h1Contact.innerHTML = 'CONTACT';
+  rowChildren.push(h1Contact);
+
+  const divContent = document.createElement('div');
+  divContent.setAttribute('class', 'col-12 background-content');
+
+  const formElement = document.createElement('form');
+  formElement.setAttribute('class', 'form');
+  const formContact = [
+    {
+      name: 'name', label: 'Your Name', input: 'input', type: 'text', placeholder: 'Enter your name',
+    },
+    {
+      name: 'email', label: 'Your Email', input: 'input', type: 'email', placeholder: 'Enter your email',
+    },
+    {
+      name: 'message', label: 'Your Message', input: 'textarea', type: '', placeholder: '',
+    },
+  ];
+  for (let i = 0; i < formContact.length; i += 1) {
+    const div = document.createElement('div');
+    div.setAttribute('class', 'form-group');
+    const label = document.createElement('label');
+    label.setAttribute('for', formContact[i].name);
+    const h4 = document.createElement('h4');
+    h4.setAttribute('class', 'my-3');
+    h4.innerHTML = formContact[i].label;
+    const input = document.createElement(formContact[i].input);
+    input.setAttribute('class', 'form-control');
+    input.setAttribute('id', formContact[i].name);
+    if (formContact[i].type !== '') {
+      input.setAttribute('type', formContact[i].type);
+      input.setAttribute('placeholder', formContact[i].placeholder);
+    } else {
+      input.setAttribute('rows', '3');
+    }
+    label.appendChild(h4);
+    div.appendChild(label);
+    div.appendChild(input);
+    formElement.appendChild(div);
+  }
+  const buttonSubmit = document.createElement('button');
+  buttonSubmit.setAttribute('type', 'submit');
+  buttonSubmit.setAttribute('class', 'btn btn-light my-4');
+  buttonSubmit.innerHTML = 'Send';
+  formElement.appendChild(buttonSubmit);
+  divContent.appendChild(formElement);
+  rowChildren.push(divContent);
+
+  for (let j = 0; j < rowChildren.length; j += 1) {
+    divRow.appendChild(rowChildren[j]);
+  }
+
+  divContainer.appendChild(divRow);
+  parentElement.appendChild(divContainer);
+
+  return parentElement;
 };
 
 export default contact;
