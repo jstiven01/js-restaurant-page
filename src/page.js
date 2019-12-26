@@ -16,9 +16,7 @@ const Page = (() => {
   const renderHomePage = () => {
     const parentElement = document.querySelector('#content');
     parentElement.innerHTML = '';
-    const [homeContent, homeClasses] = home();
-    makeElementChild(parentElement, 'div', homeContent, homeClasses);
-    return document.body.appendChild(parentElement);
+    return document.body.appendChild(parentElement.appendChild(home()));
   };
 
   const renderMenuPage = () => {
