@@ -22,9 +22,7 @@ const Page = (() => {
   const renderMenuPage = () => {
     const parentElement = document.querySelector('#content');
     parentElement.innerHTML = '';
-    const [menuContent, menuClasses] = menu();
-    makeElementChild(parentElement, 'div', menuContent, menuClasses);
-    return document.body.appendChild(parentElement);
+    return document.body.appendChild(parentElement.appendChild(menu()));
   };
 
   const renderContactPage = () => {
